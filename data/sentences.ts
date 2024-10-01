@@ -14,6 +14,7 @@ export const sceneNames: { [key: string]: string } = {
     hospital: 'Hospital',
     bank: 'Bank',
     school: 'School',
+    friends: 'Friends group',
 };
 
 export const sentences: { [language: string]: { [scene: string]: string[] } } = {
@@ -171,6 +172,28 @@ export const sentences: { [language: string]: { [scene: string]: string[] } } = 
             "Can I speak with the principal?",
             "What extracurricular activities are available?",
             "Is there a scholarship program?"
+        ],
+        friends:  [
+            "How are you?",
+            "What have you been up to?",
+            "How was your day?",
+            "What are you doing this weekend?",
+            "Do you want to hang out?",
+            "What's new with you?",
+            "How's work going?",
+            "What are your plans for the holidays?",
+            "Do you have any exciting news?",
+            "What's on your mind?",
+            "How's your family?",
+            "What's your favorite movie?",
+            "What's your favorite food?",
+            "What's your favorite hobby?",
+            "What's your favorite book?",
+            "What's your favorite song?",
+            "What's your favorite TV show?",
+            "What's your favorite place to visit?",
+            "What's your favorite sport?",
+            "What's your favorite color?"
         ]
     },
     es: {
@@ -327,6 +350,28 @@ export const sentences: { [language: string]: { [scene: string]: string[] } } = 
             "¿Puedo hablar con el director?",
             "¿Qué actividades extracurriculares hay disponibles?",
             "¿Hay un programa de becas?"
+        ],
+        friends:  [
+            "¿Cómo estás?",
+            "¿Qué has estado haciendo?",
+            "¿Cómo fue tu día?",
+            "¿Qué planes tienes para este fin de semana?",
+            "¿Quieres salir?",
+            "¿Qué hay de nuevo contigo?",
+            "¿Cómo te va en el trabajo?",
+            "¿Cuáles son tus planes para las vacaciones?",
+            "¿Tienes alguna noticia emocionante?",
+            "¿En qué estás pensando?",
+            "¿Cómo está tu familia?",
+            "¿Cuál es tu película favorita?",
+            "¿Cuál es tu comida favorita?",
+            "¿Cuál es tu pasatiempo favorito?",
+            "¿Cuál es tu libro favorito?",
+            "¿Cuál es tu canción favorita?",
+            "¿Cuál es tu programa de televisión favorito?",
+            "¿Cuál es tu lugar favorito para visitar?",
+            "¿Cuál es tu deporte favorito?",
+            "¿Cuál es tu color favorito?"
         ]
     },
     de: {
@@ -483,6 +528,28 @@ export const sentences: { [language: string]: { [scene: string]: string[] } } = 
             "Kann ich mit dem Schulleiter sprechen?",
             "Welche außerschulischen Aktivitäten gibt es?",
             "Gibt es ein Stipendienprogramm?"
+        ],
+        friends:  [
+            "Wie geht es dir?",
+            "Was hast du gemacht?",
+            "Wie war dein Tag?",
+            "Was machst du dieses Wochenende?",
+            "Möchtest du etwas unternehmen?",
+            "Was gibt es Neues bei dir?",
+            "Wie läuft die Arbeit?",
+            "Was sind deine Pläne für die Feiertage?",
+            "Hast du aufregende Neuigkeiten?",
+            "Was beschäftigt dich?",
+            "Wie geht es deiner Familie?",
+            "Was ist dein Lieblingsfilm?",
+            "Was ist dein Lieblingsessen?",
+            "Was ist dein Lieblingshobby?",
+            "Was ist dein Lieblingsbuch?",
+            "Was ist dein Lieblingslied?",
+            "Was ist deine Lieblingssendung?",
+            "Was ist dein Lieblingsort zum Besuchen?",
+            "Was ist dein Lieblingssport?",
+            "Was ist deine Lieblingsfarbe?"
         ]
     },
     it: {
@@ -639,6 +706,28 @@ export const sentences: { [language: string]: { [scene: string]: string[] } } = 
             "Posso parlare con il preside?",
             "Quali attività extracurricolari sono disponibili?",
             "C'è un programma di borse di studio?"
+        ],
+        friends:  [
+            "Come stai?",
+            "Cosa hai fatto di recente?",
+            "Come è stata la tua giornata?",
+            "Cosa farai questo fine settimana?",
+            "Ti va di uscire?",
+            "Cosa c'è di nuovo?",
+            "Come va il lavoro?",
+            "Quali sono i tuoi piani per le vacanze?",
+            "Hai delle novità interessanti?",
+            "Cosa ti frulla per la testa?",
+            "Come sta la tua famiglia?",
+            "Qual è il tuo film preferito?",
+            "Qual è il tuo cibo preferito?",
+            "Qual è il tuo hobby preferito?",
+            "Qual è il tuo libro preferito?",
+            "Qual è la tua canzone preferita?",
+            "Qual è il tuo programma televisivo preferito?",
+            "Qual è il tuo posto preferito da visitare?",
+            "Qual è il tuo sport preferito?",
+            "Qual è il tuo colore preferito?"
         ]
     },
     fr: {
@@ -795,6 +884,28 @@ export const sentences: { [language: string]: { [scene: string]: string[] } } = 
             "Puis-je parler au directeur?",
             "Quelles activités extrascolaires sont disponibles?",
             "Y a-t-il un programme de bourses?"
+        ],
+        friends:  [
+            "Comment ça va?",
+            "Qu'as-tu fait récemment?",
+            "Comment était ta journée?",
+            "Quels sont tes projets pour ce week-end?",
+            "Veux-tu sortir?",
+            "Quoi de neuf?",
+            "Comment se passe le travail?",
+            "Quels sont tes projets pour les vacances?",
+            "As-tu des nouvelles excitantes?",
+            "À quoi penses-tu?",
+            "Comment va ta famille?",
+            "Quel est ton film préféré?",
+            "Quel est ton plat préféré?",
+            "Quel est ton passe-temps préféré?",
+            "Quel est ton livre préféré?",
+            "Quelle est ta chanson préférée?",
+            "Quelle est ton émission de télévision préférée?",
+            "Quel est ton endroit préféré à visiter?",
+            "Quel est ton sport préféré?",
+            "Quelle est ta couleur préférée?"
         ]
     }
 };
