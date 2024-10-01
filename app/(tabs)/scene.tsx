@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
+import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { Picker } from '@react-native-picker/picker';
 import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
 import { sentences, languageNames, sceneNames } from '@/data/sentences';
 
 const Scene: React.FC = () => {
@@ -11,7 +13,7 @@ const Scene: React.FC = () => {
   const sceneSentences = sentences[language]?.[scene] || [];
 
   return (
-      <View style={styles.container}>
+      <ThemedView style={styles.container}>
         <View style={styles.pickerContainer}>
           <Picker
               selectedValue={language}
@@ -32,21 +34,24 @@ const Scene: React.FC = () => {
             ))}
           </Picker>
         </View>
-        <ScrollView contentContainerStyle={styles.scrollViewContent}>
-          {sceneSentences.map((sentence, index) => (
-              <ThemedText key={index} style={styles.sentence}>
-                {index + 1}. {sentence}
-              </ThemedText>
-          ))}
-        </ScrollView>
-      </View>
+        <ParallaxScrollView padding={0}>
+          <ThemedView style={styles.content}>
+            <ScrollView contentContainerStyle={styles.scrollViewContent}>
+              {sceneSentences.map((sentence, index) => (
+                  <ThemedText key={index} style={styles.sentence}>
+                    {index + 1}. {sentence}
+                  </ThemedText>
+              ))}
+            </ScrollView>
+          </ThemedView>
+        </ParallaxScrollView>
+      </ThemedView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
   },
   pickerContainer: {
     position: 'absolute',
@@ -57,17 +62,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 8,
     paddingTop: 32,
-    backgroundColor: '#ffffff',
-    borderRadius: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 5,
     zIndex: 1,
+    backgroundColor: '#a1cedc',
+  },
+  content: {
+    flex: 1,
+    marginTop: 100,
   },
   scrollViewContent: {
-    paddingTop: 100, // Adjust this value based on the height of the pickerContainer
     padding: 16,
   },
   picker: {
@@ -78,13 +80,9 @@ const styles = StyleSheet.create({
   sentence: {
     marginBottom: 8,
     padding: 10,
-    backgroundColor: '#ffffff',
     borderRadius: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 5,
+    borderWidth: 1,
+    borderColor: '#505050',
   },
 });
 
