@@ -30,7 +30,7 @@ const Scene: React.FC = () => {
               onValueChange={(itemValue) => setScene(itemValue)}
           >
             {Object.keys(sentences[language]).map((sc) => (
-                <Picker.Item key={sc} label={sceneNames[sc]} value={sc} />
+                <Picker.Item key={sc} label={sceneNames[sc][language]} value={sc} />
             ))}
           </Picker>
         </View>

@@ -6,15 +6,63 @@ export const languageNames: { [key: string]: string } = {
     fr: 'French',
 };
 
-export const sceneNames: { [key: string]: string } = {
-    hotel: 'Hotel',
-    restaurant: 'Restaurant',
-    taxi: 'Taxi',
-    shopping: 'Shopping',
-    hospital: 'Hospital',
-    bank: 'Bank',
-    school: 'School',
-    friends: 'Friends group',
+export const sceneNames: { [key: string]: { [key: string]: string } } = {
+    hotel: {
+        en: 'Hotel',
+        es: 'Hotel',
+        de: 'Hotel',
+        it: 'Hotel',
+        fr: 'Hôtel',
+    },
+    restaurant: {
+        en: 'Restaurant',
+        es: 'Restaurante',
+        de: 'Restaurant',
+        it: 'Ristorante',
+        fr: 'Restaurant',
+    },
+    taxi: {
+        en: 'Taxi',
+        es: 'Taxi',
+        de: 'Taxi',
+        it: 'Taxi',
+        fr: 'Taxi',
+    },
+    shopping: {
+        en: 'Shopping',
+        es: 'Compras',
+        de: 'Einkaufen',
+        it: 'Shopping',
+        fr: 'Shopping',
+    },
+    hospital: {
+        en: 'Hospital',
+        es: 'Hospital',
+        de: 'Krankenhaus',
+        it: 'Ospedale',
+        fr: 'Hôpital',
+    },
+    bank: {
+        en: 'Bank',
+        es: 'Banco',
+        de: 'Bank',
+        it: 'Banca',
+        fr: 'Banque',
+    },
+    school: {
+        en: 'School',
+        es: 'Escuela',
+        de: 'Schule',
+        it: 'Scuola',
+        fr: 'École',
+    },
+    friends: {
+        en: 'Friends',
+        es: 'Amigos',
+        de: 'Freunde',
+        it: 'Amici',
+        fr: 'Amis',
+    },
 };
 
 export const sentences: { [language: string]: { [scene: string]: string[] } } = {
