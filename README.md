@@ -1,13 +1,14 @@
 # TalkTalkGo
 
-This is a simple app that you can find simple sentences in different languages.
+This is an android and iOS app that helps you find sentences in different languages.
+You can read the sentences in your native language and the language you want to speak. 
+
 
 ## How to use
 
-
    ```bash
    npm install
-    npx expo start
+   npx expo start
    ```
 
 ## Screenshots
