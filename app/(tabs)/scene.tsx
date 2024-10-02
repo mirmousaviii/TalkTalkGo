@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, ScrollView, View } from 'react-native';
+import { StyleSheet, ScrollView, View, TouchableOpacity } from 'react-native';
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { Picker } from '@react-native-picker/picker';
 import { ThemedText } from '@/components/ThemedText';
@@ -8,9 +8,10 @@ import { sentences, languageNames, sceneNames } from '@/data/sentences';
 
 const Scene: React.FC = () => {
   const [language, setLanguage] = useState('en');
-  const [scene, setScene] = useState('hotel');
+  const [scene, setScene] = useState(Object.keys(sceneNames)[0]);
+  const [showEnglish, setShowEnglish] = useState<number | null>(null);
 
-  const sceneSentences = sentences[language]?.[scene] || [];
+  const sceneSentences = sentences[scene];
 
   return (
       <ThemedView style={styles.container}>
@@ -20,8 +21,13 @@ const Scene: React.FC = () => {
               style={styles.picker}
               onValueChange={(itemValue) => setLanguage(itemValue)}
           >
-            {Object.keys(sentences).map((lang) => (
-                <Picker.Item key={lang} label={languageNames[lang]} value={lang} />
+            {Object.keys(languageNames).map((lang) => (
+                <Picker.Item
+                    key={lang}
+                    label={languageNames[lang]}
+                    value={lang}
+                    style={styles.pickerItem}
+                />
             ))}
           </Picker>
           <Picker
@@ -29,8 +35,13 @@ const Scene: React.FC = () => {
               style={styles.picker}
               onValueChange={(itemValue) => setScene(itemValue)}
           >
-            {Object.keys(sentences[language]).map((sc) => (
-                <Picker.Item key={sc} label={sceneNames[sc][language]} value={sc} />
+            {Object.keys(sceneNames).map((scene) => (
+                <Picker.Item
+                    key={scene}
+                    label={sceneNames[scene][language]}
+                    value={scene}
+                    style={styles.pickerItem}
+                />
             ))}
           </Picker>
         </View>
@@ -38,9 +49,14 @@ const Scene: React.FC = () => {
           <ThemedView style={styles.content}>
             <ScrollView contentContainerStyle={styles.scrollViewContent}>
               {sceneSentences.map((sentence, index) => (
-                  <ThemedText key={index} style={styles.sentence}>
-                    {index + 1}. {sentence}
-                  </ThemedText>
+                  <TouchableOpacity
+                      key={index}
+                      onPress={() => setShowEnglish(showEnglish === index ? null : index)}
+                  >
+                    <ThemedText style={[styles.sentence, showEnglish === index && styles.highlightedSentence]}>
+                      {showEnglish === index ? (index + 1) + ". " + sentence['en'] : (index + 1) + ". " + sentence[language]}
+                    </ThemedText>
+                  </TouchableOpacity>
               ))}
             </ScrollView>
           </ThemedView>
@@ -77,12 +93,18 @@ const styles = StyleSheet.create({
     height: 50,
     marginHorizontal: 5,
   },
+  pickerItem: {
+    fontSize: 18,
+  },
   sentence: {
     marginBottom: 8,
     padding: 10,
     borderRadius: 3,
     borderWidth: 1,
-    borderColor: '#505050',
+    borderColor: '#a1cedc',
+  },
+  highlightedSentence: {
+    backgroundColor: '#a1cedc', // Change this color as needed
   },
 });
 

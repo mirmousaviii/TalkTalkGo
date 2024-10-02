@@ -42,7 +42,7 @@ export default function ParallaxScrollView({
         };
     });
 
-    const headerBackgroundColor = colorScheme === 'dark' ? '#1D3D47' : '#A1CEDC';
+    const headerBackgroundColor = colorScheme === 'dark' ? '#1d3d47' : '#a1cedc';
 
     return (
         <ThemedView style={styles.container}>
