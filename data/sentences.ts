@@ -1,8 +1,8 @@
 export const languageNames: { [key: string]: string } = {
     en: 'English',
+    it: 'Italian',
     es: 'Spanish',
     de: 'German',
-    it: 'Italian',
     fr: 'French',
 };
 

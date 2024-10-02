@@ -22,7 +22,12 @@ const Scene: React.FC = () => {
               onValueChange={(itemValue) => setLanguage(itemValue)}
           >
             {Object.keys(languageNames).map((lang) => (
-                <Picker.Item key={lang} label={languageNames[lang]} value={lang} />
+                <Picker.Item
+                    key={lang}
+                    label={languageNames[lang]}
+                    value={lang}
+                    style={styles.pickerItem}
+                />
             ))}
           </Picker>
           <Picker
@@ -31,7 +36,12 @@ const Scene: React.FC = () => {
               onValueChange={(itemValue) => setScene(itemValue)}
           >
             {Object.keys(sceneNames).map((scene) => (
-                <Picker.Item key={scene} label={sceneNames[scene][language]} value={scene} />
+                <Picker.Item
+                    key={scene}
+                    label={sceneNames[scene][language]}
+                    value={scene}
+                    style={styles.pickerItem}
+                />
             ))}
           </Picker>
         </View>
@@ -82,6 +92,9 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     marginHorizontal: 5,
+  },
+  pickerItem: {
+    fontSize: 18,
   },
   sentence: {
     marginBottom: 8,
